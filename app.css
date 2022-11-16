@@ -5,11 +5,14 @@ body {
   font-family: 'Vollkorn', serif;
 }
 
-
-
-.container {
+#main {
     display: grid;
-    grid-template-columns: auto auto; 
+    grid-template-columns: 700px 700px; 
+    grid-column-gap: 55px;
+    grid-row-gap: 20px;
+    justify-content: center;
+    align-content: center;
+    grid-auto-flow: row;
 }
 
 .card {
@@ -17,20 +20,24 @@ body {
     padding-bottom: 2%;
     display: flex;
     width: 700px;
-    margin: 5px;
-
     background: #f2f2f2;
-    overflow: hidden;
-    border-radius: 20px;
+    border-radius: 18px;
     box-shadow: 0 0 20px 8px #d0d0d0;
 }
 
-img {
+.card img{ 
     width: 250px;
-  }
+}
 
 .card-content{
     padding-left: 2%;
-    align-items: center;
-    justify-content: center;
+}
+
+#logo {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#logo img{
+  width: 500px;
 }
