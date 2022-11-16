@@ -1,3 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Vollkorn&display=swap');
+
 body {
-    padding-top: 15%;
+  background: #f2f2f2;
+  font-family: 'Vollkorn', serif;
+}
+
+
+
+.container {
+    display: grid;
+    grid-template-columns: auto auto; 
+}
+
+.card {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    display: flex;
+    width: 700px;
+    margin: 5px;
+
+    background: #f2f2f2;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 0 20px 8px #d0d0d0;
+}
+
+img {
+    width: 250px;
+  }
+
+.card-content{
+    padding-left: 2%;
+    align-items: center;
+    justify-content: center;
 }
