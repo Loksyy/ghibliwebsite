@@ -1,16 +1,10 @@
-
 const index = document.querySelector('#main');
 
-const container = document.createElement('div');
-container.setAttribute('class', 'container');
-
-index.appendChild(container);
-
-const GetAPI = async() => {
+const ghibliAPI = async() => {
     const res = await axios.get('https://ghibliapi.herokuapp.com/films');
     const data = res.data;
-    data.forEach(Ghibli);
-    function Ghibli(movie) {
+    data.forEach(ghibliMovie);
+    function ghibliMovie(movie) {
 
         const card = document.createElement('div');
         card.setAttribute('class', 'card');
@@ -21,26 +15,26 @@ const GetAPI = async() => {
         const cardContent = document.createElement('div');
         cardContent.setAttribute('class', 'card-content');
 
-        container.appendChild(card);
+        index.appendChild(card);
         card.appendChild(cardImg);
         card.appendChild(cardContent);
 
-        const img = document.createElement('IMG');
-        img.src = movie["image"]
-        const h = document.createElement('h1');
-        const b = document.createElement('b');
-        const p = document.createElement('p');
+        const movieImg = document.createElement('IMG');
+        movieImg.src = movie["image"]
+        const movieTitle = document.createElement('h1');
+        const movieReleaseDate = document.createElement('b');
+        const movieDescription = document.createElement('p');
         
-        cardImg.appendChild(img);
-        cardContent.appendChild(h);
-        cardContent.appendChild(b);
-        cardContent.appendChild(p);
+        cardImg.appendChild(movieImg);
+        cardContent.appendChild(movieTitle);
+        cardContent.appendChild(movieReleaseDate);
+        cardContent.appendChild(movieDescription);
 
-        h.innerHTML=`${movie["title"]} (${movie["original_title_romanised"]})`;
-        p.innerHTML=movie["description"];
-        b.innerHTML=`Release date : ${movie["release_date"]}`;
+        movieTitle.innerHTML=`${movie["title"]} (${movie["original_title_romanised"]})`;
+        movieDescription.innerHTML=movie["description"];
+        movieReleaseDate.innerHTML=`Release date : ${movie["release_date"]}`;
     }
 }
 
-GetAPI()
+ghibliAPI()
 
