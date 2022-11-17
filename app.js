@@ -36,5 +36,6 @@ const ghibliAPI = async() => {
     }
 }
 
-ghibliAPI()
-
+addEventListener('DOMContentLoaded', (event) => {
+    ghibliAPI()
+});
